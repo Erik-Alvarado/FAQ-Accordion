@@ -1,4 +1,6 @@
 const accordionBtns = document.querySelectorAll("#accordion");
+const darkMode = document.querySelector("main");
+const powerBtn = document.querySelector(".power");
 
 accordionBtns.forEach(accordion => {
     accordion.addEventListener("click", () => {
@@ -15,3 +17,8 @@ accordionBtns.forEach(accordion => {
     })
 })
 accordion[1].click();
+
+powerBtn.addEventListener("click", () => {
+    darkMode.classList.toggle("dark");
+    powerBtn.classList.toggle("dark");
+})

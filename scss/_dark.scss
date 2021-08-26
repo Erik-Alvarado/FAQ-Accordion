@@ -1,0 +1,36 @@
+main {
+  &.dark {
+    background-image: linear-gradient(0deg, $darkDesatBlue, $darkGrayBlue);
+    .card {
+      background-color: $veryDarkGrayBlue;
+      .img-section {
+        background-blend-mode: multiply;
+        border-radius: 10px 0 0 10px;
+      }
+      .faq-section {
+        h1 {
+          color: $lightGrayBlue;
+        }
+        .tab {
+          color: $lightGrayBlue;
+          .question {
+            color: $lightGrayBlue;
+            &:hover {
+              color: $softRed;
+            }
+          }
+        }
+      }
+    }
+  }
+  .mode-change {
+    .power {
+      &.dark {
+        background-color: $veryDarkGrayBlue;
+        .power-icon {
+          fill: $softViolet;
+        }
+      }
+    }
+  }
+}

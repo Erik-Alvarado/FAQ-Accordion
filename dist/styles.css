@@ -70,6 +70,7 @@ main {
   height: 100vh;
   width: 100%;
   background-image: linear-gradient(180deg, #af67e9, #6565e7);
+  transition: all ease 0.3s;
 }
 
 .container {
@@ -81,6 +82,18 @@ main {
   margin: 0 50px;
 }
 
+@media (max-width: 56.25em) {
+  .container {
+    padding: 100px 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    margin: 0 30px;
+  }
+}
+
 .container .card {
   background-color: #fff;
   display: flex;
@@ -88,6 +101,7 @@ main {
   width: 1000px;
   border-radius: 15px;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+  transition: all ease 0.3s;
 }
 
 @media (max-width: 71.875em) {
@@ -107,6 +121,18 @@ main {
     flex-direction: column;
     height: max-content;
     margin-top: 150px;
+  }
+}
+
+@media (max-width: 39.9375em) {
+  .container .card {
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 425px) {
+  .container .card {
+    margin-top: 80px;
   }
 }
 
@@ -138,7 +164,13 @@ main {
   .container .card .img-section {
     background-image: none;
     width: 100%;
-    height: 200px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 425px) {
+  .container .card .img-section {
+    height: 170px;
   }
 }
 
@@ -193,26 +225,100 @@ main {
     display: flex;
     background-image: url("/images/bg-pattern-mobile.svg");
     background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
+    background-position: center -30px;
+    background-size: 425px;
     flex-direction: column;
     position: absolute;
     top: 0;
-    flex-basis: 75rem;
-    min-width: 80%;
     left: 0;
-    margin: -180px 0;
+    height: 120%;
     right: 0;
   }
+}
+
+@media (max-width: 56.25em) and (max-width: 39.9375em) {
+  .container .card .mobile {
+    background-position: top center;
+    background-size: 320px;
+  }
+}
+
+@media (max-width: 56.25em) and (max-width: 425px) {
+  .container .card .mobile {
+    background-size: 250px;
+  }
+}
+
+@media (max-width: 56.25em) {
   .container .card .mobile .mobile-woman {
-    margin-right: 50px;
+    margin: -213px auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 184%;
+    padding-right: 52px;
+    animation: levitate ease 3s infinite;
   }
 }
 
 @media (max-width: 56.25em) and (max-width: 39.9375em) {
   .container .card .mobile .mobile-woman {
-    margin-right: 40px;
+    height: 130%;
+    margin: -143px auto;
+    padding-right: 40px;
   }
+}
+
+@media (max-width: 56.25em) and (max-width: 425px) {
+  .container .card .mobile .mobile-woman {
+    height: 120%;
+    margin: -113px auto;
+    padding-right: 30px;
+  }
+}
+
+.container .mode-change {
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+  height: 50px;
+  width: 50px;
+  position: relative;
+  margin-top: 25px;
+  border-radius: 50px;
+}
+
+@media (max-width: 56.25em) {
+  .container .mode-change {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  .container .mode-change {
+    margin-top: 25px;
+  }
+}
+
+.container .mode-change .power {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: #6565e7;
+  transition: all ease 0.4s;
+}
+
+.container .mode-change .power:active {
+  box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.container .mode-change .power:active {
+  background-color: #4a4b5e;
+}
+
+.container .mode-change .power .power-icon {
+  fill: #fff;
 }
 
 .faq-section {
@@ -225,7 +331,7 @@ main {
 @media (max-width: 56.25em) {
   .faq-section {
     width: 100%;
-    padding-top: 0;
+    padding: 0 25px 25px;
     text-align: center;
   }
 }
@@ -293,6 +399,10 @@ main {
   transition: all ease 0.3s;
 }
 
+.faq-section .tabs .tab .tab-content p {
+  text-align: start;
+}
+
 .attribution {
   position: absolute;
   bottom: 0;
@@ -307,5 +417,42 @@ main {
   text-decoration: none;
   color: #e7e7e9;
   font-weight: 700;
+}
+
+main.dark {
+  background-image: linear-gradient(0deg, #1d1e35, #787887);
+}
+
+main.dark .card {
+  background-color: #4a4b5e;
+}
+
+main.dark .card .img-section {
+  background-blend-mode: multiply;
+  border-radius: 10px 0 0 10px;
+}
+
+main.dark .card .faq-section h1 {
+  color: #e7e7e9;
+}
+
+main.dark .card .faq-section .tab {
+  color: #e7e7e9;
+}
+
+main.dark .card .faq-section .tab .question {
+  color: #e7e7e9;
+}
+
+main.dark .card .faq-section .tab .question:hover {
+  color: #f47c57;
+}
+
+main .mode-change .power.dark {
+  background-color: #4a4b5e;
+}
+
+main .mode-change .power.dark .power-icon {
+  fill: #af67e9;
 }
 /*# sourceMappingURL=styles.css.map */
